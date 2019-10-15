@@ -1,0 +1,260 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 数据库操作</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/what_is_xmlhttprequest.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_security.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<p>为了清楚地说明使用AJAX从数据库访问信息是多么容易，我们将动态构建MySQL查询并在“ajax.html”上显示结果。但在我们继续之前，让我们做好基础工作。使用以下命令创建表。</p>
+<p>注 - 我们假设您有足够的权限执行以下MySQL操作。</p>
+<pre class="result notranslate">
+CREATE TABLE 'ajax_example' (
+   'name' varchar(50) NOT NULL,
+   'age' int(11) NOT NULL,
+   'sex' varchar(1) NOT NULL,
+   'wpm' int(11) NOT NULL,
+   PRIMARY KEY  ('name')
+) 
+</pre>
+<p>现在使用以下SQL语句将以下数据转储到此表中 - </p>
+<pre class="result notranslate">
+INSERT INTO 'ajax_example' VALUES ('Jerry', 120, 'm', 20);
+INSERT INTO 'ajax_example' VALUES ('Regis', 75, 'm', 44);
+INSERT INTO 'ajax_example' VALUES ('Frank', 45, 'm', 87);
+INSERT INTO 'ajax_example' VALUES ('Jill', 22, 'f', 72);
+INSERT INTO 'ajax_example' VALUES ('Tracy', 27, 'f', 0);
+INSERT INTO 'ajax_example' VALUES ('Julie', 35, 'f', 90);
+</pre>
+<h2>客户端HTML文件</h2>
+<p>现在让我们拥有客户端HTML文件，即ajax.html，它将具有以下代码 - </p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;body&gt;
+      &lt;script language = "javascript" type = "text/javascript"&gt;
+         &lt;!-- 
+         //Browser Support Code
+         function ajaxFunction() {
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            
+            try {        
+               // Opera 8.0+, Firefox, Safari
+               ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+               
+               // Internet Explorer Browsers
+               try {
+                  ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+               } catch (e) {
+                  
+                  try {
+                     ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                  } catch (e) {
+                     // Something went wrong
+                     alert("Your browser broke!");
+                     return false;
+                  }
+               }
+            }
+            
+            // Create a function that will receive data
+            // sent from the server and will update
+            // div section in the same page.
+            ajaxRequest.onreadystatechange = function() {
+            
+               if(ajaxRequest.readyState == 4) {
+                  var ajaxDisplay = document.getElementById('ajaxDiv');
+                  ajaxDisplay.innerHTML = ajaxRequest.responseText;
+               }
+            }
+            
+            // Now get the value from user and pass it to
+            // server script.
+            var age = document.getElementById('age').value;
+            var wpm = document.getElementById('wpm').value;
+            var sex = document.getElementById('sex').value;
+            var queryString = "?age = " + age ;
+            
+            queryString +=  "&amp;wpm = " + wpm + "&amp;sex = " + sex;
+            ajaxRequest.open("GET", "ajax-example.php" + queryString, true);
+            ajaxRequest.send(null); 
+         }
+         //--&gt;
+      &lt;/script&gt;
+
+      &lt;form name = 'myForm'&gt;
+         Max Age: &lt;input type = 'text' id = 'age' /&gt; &lt;br /&gt;
+         Max WPM: &lt;input type = 'text' id = 'wpm' /&gt; &lt;br /&gt;
+         Sex: 
+         
+         &lt;select id = 'sex'&gt;
+            &lt;option value = "m"&gt;m&lt;/option&gt;
+            &lt;option value = "f"&gt;f&lt;/option&gt;
+         &lt;/select&gt;
+         
+         &lt;input type = 'button' onclick = 'ajaxFunction()' value = 'Query MySQL'/&gt;
+      &lt;/form&gt;
+      
+      &lt;div id = 'ajaxDiv'&gt;Your result will display here&lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>注 - 在Query中传递变量的方式是根据HTTP标准和格式。</p>
+<pre class="prettyprint notranslate">
+URL?variable1 = value1;&amp;variable2 = value2;
+</pre>
+<p>上面的代码将为您提供如下界面 - </p>
+<script language="javascript" type="text/javascript">
+<!-- 
+//Browser Support Code
+function ajaxFunction(){
+   var ajaxRequest;  // The variable that makes Ajax possible!
+   try{
+   
+      // Opera 8.0+, Firefox, Safari
+      ajaxRequest = new XMLHttpRequest();
+   }catch (e){
+   
+      // Internet Explorer Browsers
+      try{
+         ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      }catch (e) {
+         try{
+            ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+         }catch (e){
+      
+            // Something went wrong
+            alert("Your browser broke!");
+            return false;
+        }
+     }
+  }
+
+   // Create a function that will receive data 
+   // sent from the server and will update
+   // div section in the same page.
+   ajaxRequest.onreadystatechange = function(){
+   
+      if(ajaxRequest.readyState == 4){
+         var ajaxDisplay = document.getElementById('ajaxDiv');
+         ajaxDisplay.innerHTML = ajaxRequest.responseText;
+      }
+   }
+   // Now get the value from user and pass it to
+   // server script.
+   var age = document.getElementById('age').value;
+   var wpm = document.getElementById('wpm').value;
+   var sex = document.getElementById('sex').value;
+   var queryString = "?age=" + age ;
+
+   queryString +=  "&wpm=" + wpm + "&sex=" + sex;
+   ajaxRequest.open("GET", "/ajax/ajax-example.php" + queryString, true);
+   ajaxRequest.send(null); 
+}
+//-->
+</script>
+<form name="myForm0">
+<p>Max Age:? <input id="age0" type="text"/></p>
+<p>Max WPM: <input id="wpm0" type="text"/></p>
+<p>Sex: <select id="sex0">
+<option value="m">m</option>
+<option value="f">f</option>
+</select></p>
+<input onclick="" type="button" value="Query MySQL"/>
+</form>
+<p>在您输入后，您的结果将显示在此部分中。</p>
+<p>注 - 这是一个虚拟界面。</p>
+<h2>服务器端PHP文件</h2>
+<p>您的客户端脚本已准备就绪。现在，我们必须编写我们的服务器端脚本，它将从数据库中获取年龄，wpm和性别，并将其发送回客户端。将以下代码放入文件“ajax-example.php”。</p>
+<pre class="prettyprint notranslate">
+&lt;?php
+$dbhost = "localhost";
+$dbuser = "dbusername";
+$dbpass = "dbpassword";
+$dbname = "dbname";
+	
+//Connect to MySQL Server
+mysql_connect($dbhost, $dbuser, $dbpass);
+	
+//Select Database
+mysql_select_db($dbname) or die(mysql_error());
+	
+// Retrieve data from Query String
+$age = $_GET['age'];
+$sex = $_GET['sex'];
+$wpm = $_GET['wpm'];
+	
+// Escape User Input to help prevent SQL Injection
+$age = mysql_real_escape_string($age);
+$sex = mysql_real_escape_string($sex);
+$wpm = mysql_real_escape_string($wpm);
+	
+//build query
+$query = "SELECT * FROM ajax_example WHERE sex = '$sex'";
+
+if(is_numeric($age))
+   $query .= " AND age &lt;= $age";
+
+if(is_numeric($wpm))
+   $query .= " AND wpm &lt;= $wpm";
+	
+//Execute query
+$qry_result = mysql_query($query) or die(mysql_error());
+
+//Build Result String
+$display_string = "&lt;table&gt;";
+$display_string .= "&lt;tr&gt;";
+$display_string .= "&lt;th&gt;Name&lt;/th&gt;";
+$display_string .= "&lt;th&gt;Age&lt;/th&gt;";
+$display_string .= "&lt;th&gt;Sex&lt;/th&gt;";
+$display_string .= "&lt;th&gt;WPM&lt;/th&gt;";
+$display_string .= "&lt;/tr&gt;";
+
+// Insert a new row in the table for each person returned
+while($row = mysql_fetch_array($qry_result)) {
+   $display_string .= "&lt;tr&gt;";
+   $display_string .= "&lt;td&gt;$row[name]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[age]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[sex]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[wpm]&lt;/td&gt;";
+   $display_string .= "&lt;/tr&gt;";
+}
+
+echo "Query: " . $query . "&lt;br /&gt;";
+$display_string .= "&lt;/table&gt;";
+
+echo $display_string;
+?&gt;
+</pre>
+<p>现在尝试在Max Age或任何其他框中输入有效值（例如120），然后单击Query MySQL按钮。</p>
+<form name="myForm">
+<p>Max Age:? <input id="age" type="text"/></p>
+<p>Max WPM: <input id="wpm" type="text"/></p>
+<p>Sex: <select id="sex">
+<option value="m">m</option>
+<option value="f">f</option>
+</select></p>
+<input onclick="ajaxFunction()" type="button" value="Query MySQL"/>
+</form>
+<p>在您输入后，您的结果将显示在此部分中。</p>
+<p>如果您已成功完成本课程，那么您就知道如何使用MySQL，PHP，HTML和Javascript来编写AJAX应用程序。</p>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/what_is_xmlhttprequest.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_security.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

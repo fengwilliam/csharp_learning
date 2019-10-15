@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">HTML 基础教程</li><li><a target="_top" href="/html/index.asp" style="background-color: rgb(214, 214, 214);">HTML 教程</a></li><li><a target="_top" href="/html/html_jianjie.asp" style="background-color: rgb(214, 214, 214);">HTML 简介</a></li><li><a target="_top" href="/html/html_editors.asp" style="background-color: rgb(214, 214, 214);">HTML 编辑器</a></li><li><a target="_top" href="/html/html_basic.asp" style="background-color: rgb(214, 214, 214);">HTML 基础</a></li><li><a target="_top" href="/html/html_elements.asp" style="background-color: rgb(214, 214, 214);">HTML 元素</a></li><li><a target="_top" href="/html/html_attributes.asp" style="background-color: rgb(214, 214, 214);">HTML 属性</a></li><li><a target="_top" href="/html/html_headings.asp" style="background-color: rgb(214, 214, 214);">HTML 标题</a></li><li><a target="_top" href="/html/html_paragraphs.asp" style="background-color: rgb(214, 214, 214);">HTML 段落</a></li><li><a target="_top" href="/html/html_styles.asp" style="background-color: rgb(214, 214, 214);">HTML 样式</a></li><li><a target="_top" href="/html/html_formatting.asp" style="background-color: rgb(214, 214, 214);">HTML 格式化</a></li><li><a target="_top" href="/html/html_quotation_elements.asp" style="background-color: rgb(214, 214, 214);">HTML 引用</a></li><li><a target="_top" href="/html/html_computercode_elements.asp" style="background-color: rgb(214, 214, 214);">HTML 计算机代码</a></li><li><a target="_top" href="/html/html_comments.asp" style="background-color: rgb(214, 214, 214);">HTML 注释</a></li><li><a target="_top" href="/html/html_css.asp" style="background-color: rgb(214, 214, 214);">HTML CSS</a></li><li><a target="_top" href="/html/html_links.asp" style="background-color: rgb(214, 214, 214);">HTML 链接</a></li><li><a target="_top" href="/html/html_images.asp" style="background-color: rgb(214, 214, 214);">HTML 图像</a></li><li><a target="_top" href="/html/html_tables.asp" style="background-color: rgb(214, 214, 214);">HTML 表格</a></li><li><a target="_top" href="/html/html_lists.asp" style="background-color: rgb(214, 214, 214);">HTML 列表</a></li><li><a target="_top" href="/html/html_blocks.asp" style="background-color: rgb(214, 214, 214);">HTML 块</a></li><li><a target="_top" href="/html/html_classes.asp" style="background-color: rgb(214, 214, 214);">HTML 类</a></li><li><a target="_top" href="/html/html_layout.asp" style="background-color: rgb(214, 214, 214);">HTML 布局</a></li><li><a target="_top" href="/html/html_responsive.asp" style="background-color: rgb(214, 214, 214);">HTML 响应式设计</a></li><li><a target="_top" href="/html/html_frames.asp" style="background-color: rgb(214, 214, 214);">HTML 框架</a></li><li><a target="_top" href="/html/html_iframe.asp" style="background-color: rgb(214, 214, 214);">HTML 内联框架</a></li><li><a target="_top" href="/html/html_backgrounds.asp" style="background-color: rgb(214, 214, 214);">HTML 背景</a></li><li><a target="_top" href="/html/html_scripts.asp" style="background-color: rgb(214, 214, 214);">HTML 脚本</a></li><li><a target="_top" href="/html/html_head.asp" style="background-color: rgb(214, 214, 214);">HTML 头部</a></li><li><a target="_top" href="/html/html_entities.asp" style="background-color: rgb(214, 214, 214);">HTML 实体</a></li><li><a target="_top" href="/html/html_url.asp" style="background-color: rgb(214, 214, 214);">HTML URL</a></li><li><a target="_top" href="/html/html_urlencode.asp" style="background-color: rgb(214, 214, 214);">HTML URL 编码</a></li><li><a target="_top" href="/html/html_webserver.asp" style="background-color: rgb(214, 214, 214);">HTML Web 服务器</a></li><li><a target="_top" href="/html/html_colors.asp" style="background-color: rgb(214, 214, 214);">HTML 颜色</a></li><li><a target="_top" href="/html/html_colornames.asp" style="background-color: rgb(214, 214, 214);">HTML 颜色名</a></li><li><a target="_top" href="/html/html_doctype.asp" style="background-color: rgb(214, 214, 214);">HTML 文档类型</a></li><li><a target="_top" href="/html/html_quick.asp" style="background-color: rgb(214, 214, 214);">HTML 速查手册</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML XHTML</li><li><a target="_top" href="/html/html_xhtml.asp" style="background-color: rgb(214, 214, 214);">XHTML 简介</a></li><li><a target="_top" href="/html/html_xhtml_elements.asp" style="background-color: rgb(214, 214, 214);">XHTML 元素</a></li><li><a target="_top" href="/html/html_xhtml_attributes.asp" style="background-color: rgb(214, 214, 214);">XHTML 属性</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML 表单</li><li><a target="_top" href="/html/html_forms.asp" style="background-color: rgb(214, 214, 214);">HTML 表单</a></li><li><a target="_top" href="/html/html_form_elements.asp" style="background-color: rgb(214, 214, 214);">HTML 表单元素</a></li><li><a target="_top" href="/html/html_form_input_types.asp" style="background-color: rgb(214, 214, 214);">HTML 输入类型</a></li><li><a target="_top" href="/html/html_form_attributes.asp" style="background-color: rgb(214, 214, 214);">HTML 输入属性</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML5</li><li><a target="_top" href="/html/html5_intro.asp" style="background-color: rgb(214, 214, 214);">HTML5 简介</a></li><li><a target="_top" href="/html/html5_browsers.asp" style="background-color: rgb(214, 214, 214);">HTML5 支持</a></li><li><a target="_top" href="/html/html5_new_elements.asp" style="background-color: rgb(214, 214, 214);">HTML5 元素</a></li><li><a target="_top" href="/html/html5_semantic_elements.asp" style="background-color: rgb(214, 214, 214);">HTML5 语义</a></li><li><a target="_top" href="/html/html5_migration.asp" style="background-color: rgb(214, 214, 214);">HTML5 迁移</a></li><li><a target="_top" href="/html/html5_syntax.asp" style="background-color: rgb(214, 214, 214);">HTML5 代码约定</a></li><li><a target="_top" href="/tags/index.asp" style="background-color: rgb(214, 214, 214);">HTML5 参考手册</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML 图形</li><li><a target="_top" href="/html/html5_canvas.asp" style="background-color: rgb(214, 214, 214);">HTML5 画布</a></li><li><a target="_top" href="/html/html5_svg.asp" style="background-color: rgb(214, 214, 214);">HTML5 SVG</a></li><li><a target="_top" href="/html/html5_canvas_vs_svg.asp" style="background-color: rgb(214, 214, 214);">HTML5 画布 vs SVG</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML 媒体</li><li><a target="_top" href="/html/html_media.asp" style="background-color: rgb(214, 214, 214);">HTML 媒体</a></li><li><a target="_top" href="/html/html_object.asp" style="background-color: rgb(214, 214, 214);">HTML 对象</a></li><li><a target="_top" href="/html/html_audio.asp" style="background-color: rgb(214, 214, 214);">HTML 音频</a></li><li><a target="_top" href="/html/html_video.asp" style="background-color: rgb(214, 214, 214);">HTML 视频</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML API</li><li><a target="_top" href="/html/html5_geolocation.asp" style="background-color: rgb(214, 214, 214);">HTML5 地理定位</a></li><li><a target="_top" href="/html/html5_draganddrop.asp" style="background-color: rgb(214, 214, 214);">HTML5 拖放</a></li><li><a target="_top" href="/html/html5_webstorage.asp" style="background-color: rgb(214, 214, 214);">HTML5 Web 存储</a></li><li><a target="_top" href="/html/html5_app_cache.asp" style="background-color: rgb(214, 214, 214);">HTML5 应用缓存</a></li><li><a target="_top" href="/html/html5_webworkers.asp" style="background-color: rgb(214, 214, 214);">HTML5 Web Workers</a></li><li><a target="_top" href="/html/html5_serversentevents.asp" style="background-color: rgb(214, 214, 214);">HTML5 SSE</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">实例/测验/总结</li><li><a target="_top" href="/example/html_examples.asp" style="background-color: rgb(214, 214, 214);">HTML 实例</a></li><li><a target="_top" href="/html/html_quiz.asp" style="background-color: rgb(214, 214, 214);">HTML 测验</a></li><li><a target="_top" href="/html/html_summary.asp" style="background-color: rgb(214, 214, 214);">HTML 总结</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">HTML 参考手册</li><li><a target="_top" href="/tags/html_ref_standardattributes.asp" style="background-color: rgb(214, 214, 214);">HTML 属性</a></li><li><a target="_top" href="/tags/html_ref_eventattributes.asp" style="background-color: rgb(214, 214, 214);">HTML 事件</a></li><li><a target="_top" href="/tags/html_ref_dtd.asp" style="background-color: rgb(214, 214, 214);">HTML 合法 DTD</a></li><li><a target="_top" href="/tags/html_ref_colornames.asp" style="background-color: rgb(214, 214, 214);">HTML 颜色名</a></li><li><a target="_top" href="/tags/html_ref_charactersets.asp" style="background-color: rgb(214, 214, 214);">HTML 字符集</a></li><li><a target="_top" href="/tags/html_ref_ascii.asp" style="background-color: rgb(214, 214, 214);">HTML ASCII</a></li><li><a target="_top" href="/tags/html_ref_entities.html" style="background-color: rgb(214, 214, 214);">HTML ISO-8859-1</a></li><li><a target="_top" href="/tags/html_ref_symbols.html" style="background-color: rgb(214, 214, 214);">HTML 符号</a></li><li><a target="_top" href="/tags/html_ref_urlencode.html" style="background-color: rgb(214, 214, 214);">HTML URL 编码</a></li><li><a target="_top" href="/tags/html_ref_language_codes.asp" style="background-color: rgb(214, 214, 214);">HTML 语言代码</a></li><li><a target="_top" href="/tags/html_ref_httpmessages.asp" style="background-color: rgb(214, 214, 214);">HTML 消息</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div id="maincontent" class="col-md-7 middle-col">
+<h1>HTML 元素</h1>
+<div id="tpn">
+<ul class="prenext">
+<li class="pre"><a href="/html/html_basic.asp" title="HTML 基础 - 四个实例">HTML 基础</a></li>
+<li class="next"><a href="/html/html_attributes.asp" title="HTML 属性">HTML 属性</a></li>
+</ul>
+</div>
+<div id="intro">
+<p><strong>HTML 文档是由 HTML 元素定义的。</strong></p>
+</div>
+<div>
+<h2>HTML 元素</h2>
+<p>HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p>
+<table class="dataintable">
+<tr>
+<th style="width:33%;">开始标签</th>
+<th style="width:33%;">元素内容</th>
+<th>结束标签</th>
+</tr>
+<tr>
+<td>&lt;p&gt;</td>
+<td>This is a paragraph</td>
+<td>&lt;/p&gt;</td>
+</tr>
+<tr>
+<td>&lt;a href="default.htm" &gt;</td>
+<td>This is a link</td>
+<td>&lt;/a&gt;</td>
+</tr>
+<tr>
+<td>&lt;br /&gt;</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p class="note"><span>注释：</span>开始标签常被称为开放标签（opening tag），结束标签常称为闭合标签（closing tag）。</p>
+</div>
+<div>
+<h2>HTML 元素语法</h2>
+<ul>
+<li>HTML 元素以<em>开始标签</em>起始</li>
+<li>HTML 元素以<em>结束标签</em>终止</li>
+<li><em>元素的内容</em>是开始标签与结束标签之间的内容</li>
+<li>某些 HTML 元素具有<em>空内容（empty content）</em></li>
+<li>空元素<em>在开始标签中进行关闭</em>（以开始标签的结束而结束）</li>
+<li>大多数 HTML 元素可拥有<em>属性</em></li>
+</ul>
+<p class="tip"><span>提示：</span>您将在本教程的下一章中学习更多有关属性的内容。</p>
+</div>
+<div>
+<h2>嵌套的 HTML 元素</h2>
+<p>大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。</p>
+<p>HTML 文档由嵌套的 HTML 元素构成。</p>
+<h3>HTML 文档实例</h3>
+<pre>
+&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<p>上面的例子包含三个 HTML 元素。</p>
+</div>
+<div>
+<h2>HTML 实例解释</h2>
+<h3>&lt;p&gt; 元素：</h3>
+<pre>&lt;p&gt;This is my first paragraph.&lt;/p&gt;</pre>
+<p>这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。</p>
+<p>这个元素拥有一个开始标签 &lt;p&gt;，以及一个结束标签 &lt;/p&gt;。</p>
+<p>元素内容是：This is my first paragraph。</p>
+<h3>&lt;body&gt; 元素：</h3>
+<pre>
+&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+</pre>
+<p>&lt;body&gt; 元素定义了 HTML 文档的主体。</p>
+<p>这个元素拥有一个开始标签 &lt;body&gt;，以及一个结束标签 &lt;/body&gt;。</p>
+<p>元素内容是另一个 HTML 元素（p 元素）。</p>
+<h3>&lt;html&gt; 元素：</h3>
+<pre>
+&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<p>&lt;html&gt; 元素定义了整个 HTML 文档。</p>
+<p>这个元素拥有一个开始标签 &lt;html&gt;，以及一个结束标签 &lt;/html&gt;。</p>
+<p>元素内容是另一个 HTML 元素（body 元素）。</p>
+</div>
+<div>
+<h2>不要忘记结束标签</h2>
+<p>即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：</p>
+<pre>
+&lt;p&gt;This is a paragraph
+&lt;p&gt;This is a paragraph
+</pre>
+<p>上面的例子在大多数浏览器中都没问题，但不要依赖这种做法。忘记使用结束标签会产生不可预料的结果或错误。</p>
+<p class="note"><span>注释：</span>未来的 HTML 版本不允许省略结束标签。</p>
+</div>
+<div>
+<h2>空的 HTML 元素</h2>
+<p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</p>
+<p>&lt;br&gt; 就是没有关闭标签的空元素（&lt;br&gt; 标签定义换行）。</p>
+<p>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</p>
+<p>在开始标签中添加斜杠，比如 &lt;br /&gt;，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</p>
+<p>即使 &lt;br&gt; 在所有浏览器中都是有效的，但使用 &lt;br /&gt; 其实是更长远的保障。</p>
+</div>
+<div>
+<h2>HTML 提示：使用小写标签</h2>
+<p>HTML 标签对大小写不敏感：&lt;P&gt; 等同于 &lt;p&gt;。许多网站都使用大写的 HTML 标签。</p>
+<p>W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中<em>推荐</em>使用小写，而在未来 (X)HTML 版本中<em>强制</em>使用小写。</p>
+</div>
+<div id="bpn">
+<ul class="prenext">
+<li class="pre"><a href="/html/html_basic.asp" title="HTML 基础 - 四个实例">HTML 基础</a></li>
+<li class="next"><a href="/html/html_attributes.asp" title="HTML 属性">HTML 属性</a></li>
+</ul>
+</div>
+<div style="background-color:#fcfdf8; padding:0;">
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- W3School 正文底部广告位 -->
+<ins class="adsbygoogle" data-ad-client="ca-pub-3381531532877742" data-ad-slot="9384069314" style="display:inline-block;width:800px;height:250px"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

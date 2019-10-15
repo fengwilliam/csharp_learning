@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 示例</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_technology.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_browser_support.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<p>以下是一些使用AJAX的着名Web应用程序列表。</p>
+<h2>谷歌地图</h2>
+<p>用户可以使用鼠标拖动整个地图，而不是单击按钮。</p>
+<ul class="list">
+<li><p>https://maps.google.com/</p></li>
+</ul>
+<h2>Google Suggest</h2>
+<p>在您输入时，Google会提供建议。使用鼠标选择结果。</p>
+<ul class="list">
+<li><p>https://www.google.com/webhp?complete=1&amp;hl;=en</p></li>
+</ul>
+<h2>Gmail的</h2>
+<p>Gmail是一种基于电子邮件更加直观，高效和实用的网络邮件。</p>
+<ul class="list">
+<li><p>https://gmail.com/</p></li>
+</ul>
+<h2>雅虎地图（新）</h2>
+<p>现在，到达目的地更方便，更有趣！</p>
+<ul class="list">
+<li><p>https://maps.yahoo.com/</p></li>
+</ul>
+<h2>AJAX与传统CGI程序的区别</h2>
+<p>逐一尝试这两个例子，你会感受到不同。在尝试AJAX示例时，没有不连续性并且您可以非常快速地获得响应，但是当您尝试标准GCI示例时，您将不得不等待响应并且您的页面也会得到刷新。</p>
+<h3>AJAX示例</h3>
+<form action="" name="form1" onsubmit="return ajax_call()">
+<input id="num1" name="num1" type="text"/> *
+<input id="num2" name="num2" type="text"/> = 
+<input id="result" name="result" type="text"/>
+<input name="semajax" type="submit" value="AJAX"/>
+</form>
+<!-- -->
+<h3>标准示例</h3>
+<form action="/ajax/ajaxCGI.php" name="form2">
+<input id="num1" name="num1" type="text" value=""/> *
+<input id="num2" name="num2" type="text" value=""/> = 
+<input id="result" name="result" type="text" value=""/>
+<input name="semajax" type="submit" value="Standard"/>
+</form>
+<p>注 - 我们在AJAX数据库中给出了一个更复杂的例子。</p>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_technology.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_browser_support.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

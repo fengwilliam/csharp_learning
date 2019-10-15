@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 浏览器支持</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_examples.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_in_action.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<p>所有可用的浏览器都不支持AJAX。以下是支持AJAX的主要浏览器列表。</p>
+<ul class="list">
+<li>Mozilla Firefox 1.0及以上版本。</li>
+<li>Netscape 7.1及以上版本。</li>
+<li>Apple Safari 1.2及以上版本。</li>
+<li>Microsoft Internet Explorer 5及更高版本。</li>
+<li>Konqueror的。</li>
+<li>Opera 7.6及以上版本。</li>
+</ul>
+<p>编写下一个应用程序时，请考虑不支持AJAX的浏览器。</p>
+<p>注 - 当我们说浏览器不支持AJAX时，它只是意味着浏览器不支持创建Javascript对象 -  XMLHttpRequest对象。</p>
+<h2>编写浏览器特定代码</h2>
+<p>使源代码与浏览器兼容的最简单方法是在JavaScript中使用try ... catch块。</p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;body&gt;
+      &lt;script language = "javascript" type = "text/javascript"&gt;
+         &lt;!-- 
+         //Browser Support Code
+         function ajaxFunction() {
+            var ajaxRequest;  // The variable that makes Ajax possible!
+
+            try {
+               // Opera 8.0+, Firefox, Safari 
+               ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+
+               // Internet Explorer Browsers
+               try {
+                  ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+               } catch (e) {
+                  
+                  try {
+                     ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                  } catch (e) {
+
+                     // Something went wrong
+                     alert("Your browser broke!");
+                     return false;
+                  }
+               }
+            }
+         }
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;form name = 'myForm'&gt;
+         Name: &lt;input type = 'text' name = 'username' /&gt; &lt;br /&gt;
+         Time: &lt;input type = 'text' name = 'time' /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>在上面的JavaScript代码中，我们尝试三次来创建XMLHttpRequest对象。我们的第一次尝试</p>
+<ul class="list">
+<li>ajaxRequest = new XMLHttpRequest（）;</li>
+</ul>
+<p>它适用于Opera 8.0 +，Firefox和Safari浏览器。如果失败，我们再尝试两次为Internet Explorer浏览器制作正确的对象 - </p>
+<ul class="list">
+<li>ajaxRequest = new ActiveXObject（“Msxml2.XMLHTTP”）;</li>
+<li>ajaxRequest = new ActiveXObject（“Microsoft.XMLHTTP”）;</li>
+</ul>
+<p>如果它不起作用，那么我们可以使用一个非常过时的浏览器，它不支持XMLHttpRequest，这也意味着它不支持AJAX。</p>
+<p>但最有可能的是，我们的变量ajaxRequest现在将被设置为浏览器使用的任何XMLHttpRequest标准，我们可以开始向服务器发送数据。逐步的AJAX工作流程将在下一章中介绍。</p>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_examples.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_in_action.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

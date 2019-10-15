@@ -1,0 +1,694 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 快速指南</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_issues.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_useful_resources.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<h1>什么是AJAX？</h1>
+<p>AJAX代表异步JavaScript和XML。 AJAX是一种借助XML，HTML，CSS和Java Script创建更好，更快，更交互的Web应用程序的新技术。</p>
+<ul class="list">
+<li><p>Ajax使用XHTML作为内容，CSS使用文档对象模型和JavaScript进行动态内容显示。</p></li>
+<li><p>传统的Web应用程序使用同步请求向服务器和从服务器发送信息。这意味着您填写表单，点击提交，然后从服务器获取包含新信息的新页面。</p></li>
+<li><p>使用AJAX，当您点击提交时，JavaScript将向服务器发出请求，解释结果并更新当前界面。从最纯粹的意义上讲，用户永远不会知道任何东西甚至被传输到服务器。</p></li>
+<li><p>XML通常用作接收服务器数据的格式，但可以使用任何格式（包括纯文本）。</p></li>
+<li><p>AJAX是一种独立于Web服务器软件的Web浏览器技术。</p></li>
+<li><p>当客户端程序在后台请求来自服务器的信息时，用户可以继续使用该应用程序。</p></li>
+<li><p>直观和自然的用户交互。单击不是必需的，鼠标移动是一个足够的事件触发器。</p></li>
+<li><p>数据驱动而不是页面驱动。</p></li>
+</ul>
+<h2>丰富的Internet应用技术</h2>
+<p>到目前为止，AJAX是最可行的富Internet应用程序（RIA）技术。它正在获得巨大的行业动力，并且正在出现一些工具包和框架。但与此同时，AJAX具有浏览器不兼容性，它受JavaScript支持，难以维护和调试。</p>
+<h2>AJAX基于开放标准</h2>
+<p>AJAX基于以下开放标准 - </p>
+<ul class="list">
+<li>使用HTML和层叠样式表（CSS）的基于浏览器的演示文稿。</li>
+<li>数据以XML格式存储并从服务器获取。</li>
+<li>在浏览器中使用XMLHttpRequest对象获取幕后数据。</li>
+<li>JavaScript让一切都成真。</li>
+</ul>
+<h1>AJAX  - 技术</h1>
+<p>AJAX不能独立工作。它与其他技术结合使用，可以创建交互式网页。</p>
+<h2>JavaScript的</h2>
+<ul class="list">
+<li>松散类型的脚本语言。</li>
+<li>在页面中发生事件时调用JavaScript函数。</li>
+<li>整个AJAX操作的胶水。</li>
+</ul>
+<h2>DOM</h2>
+<ul class="list">
+<li>用于访问和操作结构化文档的API。</li>
+<li>表示XML和HTML文档的结构。</li>
+</ul>
+<h2>CSS</h2>
+<ul class="list">
+<li>允许将演示样式与内容清晰分离，并可通过JavaScript以编程方式进行更改</li>
+</ul>
+<h2>XMLHttpRequest的</h2>
+<ul class="list">
+<li>与服务器执行异步交互的JavaScript对象。</li>
+</ul>
+<h1>AJAX  - 示例</h1>
+<p>以下是一些使用AJAX的着名Web应用程序列表。</p>
+<h2>谷歌地图</h2>
+<p>用户可以使用鼠标拖动整个地图，而不是单击按钮。</p>
+<ul class="list">
+<li><p>https://maps.google.com/</p></li>
+</ul>
+<h2>Google Suggest</h2>
+<p>在您输入时，Google会提供建议。使用箭头键导航结果。</p>
+<ul class="list">
+<li><p>https://www.google.com/webhp?complete=1&amp;hl;=en</p></li>
+</ul>
+<h2>Gmail的</h2>
+<p>Gmail是一种基于电子邮件更加直观，高效和实用的构思的网络邮件。</p>
+<ul class="list">
+<li><p>https://gmail.com/</p></li>
+</ul>
+<h2>雅虎地图（新）</h2>
+<p>现在，到达目的地更方便，更有趣！</p>
+<ul class="list">
+<li><p>https://maps.yahoo.com/</p></li>
+</ul>
+<h2>AJAX与传统CGI程序的区别</h2>
+<p>逐一尝试这两个例子，你会感受到不同。在尝试AJAX示例时，没有不连续性并且您可以非常快速地获得响应，但是当您尝试标准GCI示例时，您将不得不等待响应并且您的页面也会得到刷新。</p>
+<h3>AJAX示例</h3>
+<form action="" name="form1" onsubmit="return ajax_call()">
+<input id="num1" name="num1" type="text"/> *
+<input id="num2" name="num2" type="text"/> = 
+<input id="result" name="result" type="text"/>
+<input name="semajax" type="submit" value="AJAX"/>
+</form>
+<!-- -->
+<h3>标准示例</h3>
+<form action="/ajax/ajaxCGI.php" name="form2">
+<input id="num1" name="num1" type="text" value=""/> *
+<input id="num2" name="num2" type="text" value=""/> = 
+<input id="result" name="result" type="text" value=""/>
+<input name="semajax" type="submit" value="Standard"/>
+</form>
+<p>注 - 我们在AJAX数据库中给出了一个更复杂的例子。</p>
+<h1>AJAX  - 浏览器支持</h1>
+<p>所有可用的浏览器都不支持AJAX。以下是支持AJAX的主要浏览器列表。</p>
+<ul class="list">
+<li>Mozilla Firefox 1.0及以上版本。</li>
+<li>Netscape 7.1及以上版本。</li>
+<li>Apple Safari 1.2及以上版本。</li>
+<li>Microsoft Internet Explorer 5及更高版本。</li>
+<li>Konqueror的。</li>
+<li>Opera 7.6及以上版本。</li>
+</ul>
+<p>编写下一个应用程序时，请考虑不支持AJAX的浏览器。</p>
+<p>注 - 当我们说浏览器不支持AJAX时，它只是意味着浏览器不支持创建Javascript对象 -  XMLHttpRequest对象。</p>
+<h2>编写浏览器特定代码</h2>
+<p>使源代码与浏览器兼容的最简单方法是在JavaScript中使用try ... catch块。</p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;body&gt;
+      &lt;script language = "javascript" type = "text/javascript"&gt;
+         &lt;!-- 
+         //Browser Support Code
+         function ajaxFunction() {
+            var ajaxRequest;  // The variable that makes Ajax possible!
+
+            try {
+               // Opera 8.0+, Firefox, Safari 
+               ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+
+               // Internet Explorer Browsers
+               try {
+                  ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+               } catch (e) {
+                  
+                  try {
+                     ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                  } catch (e) {
+
+                     // Something went wrong
+                     alert("Your browser broke!");
+                     return false;
+                  }
+               }
+            }
+         }
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;form name = 'myForm'&gt;
+         Name: &lt;input type = 'text' name = 'username' /&gt; &lt;br /&gt;
+         Time: &lt;input type = 'text' name = 'time' /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>在上面的JavaScript代码中，我们尝试三次来创建XMLHttpRequest对象。我们的第一次尝试</p>
+<ul class="list">
+<li>ajaxRequest = new XMLHttpRequest（）;</li>
+</ul>
+<p>它适用于Opera 8.0 +，Firefox和Safari浏览器。如果失败，我们再尝试两次为Internet Explorer浏览器制作正确的对象 - </p>
+<ul class="list">
+<li>ajaxRequest = new ActiveXObject（“Msxml2.XMLHTTP”）;</li>
+<li>ajaxRequest = new ActiveXObject（“Microsoft.XMLHTTP”）;</li>
+</ul>
+<p>如果它不起作用，那么我们可以使用一个非常过时的浏览器，它不支持XMLHttpRequest，这也意味着它不支持AJAX。</p>
+<p>但最有可能的是，我们的变量ajaxRequest现在将被设置为浏览器使用的任何XMLHttpRequest标准，我们可以开始向服务器发送数据。逐步的AJAX工作流程将在下一章中介绍。</p>
+<h1>AJAX  - 行动</h1>
+<p>本章为您提供了AJAX操作的确切步骤的清晰图像。</p>
+<h2>AJAX操作的步骤</h2>
+<ul class="list">
+<li>发生客户端事件。</li>
+<li>创建XMLHttpRequest对象。</li>
+<li>XMLHttpRequest对象已配置。</li>
+<li>XMLHttpRequest对象向Web服务器发出异步请求。</li>
+<li>Web服务器返回包含XML文档的结果。</li>
+<li>XMLHttpRequest对象调用callback（）函数并处理结果。</li>
+<li>HTML DOM已更新。</li>
+</ul>
+<p>让我们逐一采取这些步骤。</p>
+<h2>发生客户端事件</h2>
+<ul class="list">
+<li><p>JavaScript函数作为事件的结果被调用。</p></li>
+<li><p>示例 -  validateUserId（）JavaScript函数被映射为输入表单字段上的onkeyup事件的事件处理程序，其id设置为“userid”</p></li>
+<li><p>&lt;input type =“text”size =“20”id =“userid”name =“id”onkeyup =“validateUserId（）;”&gt;。</p></li>
+</ul>
+<h2>XMLHttpRequest对象已创建</h2>
+<pre class="prettyprint notranslate">
+var ajaxRequest;  // The variable that makes Ajax possible!
+function ajaxFunction() {
+   try {
+      // Opera 8.0+, Firefox, Safari
+      ajaxRequest = new XMLHttpRequest();
+   } catch (e) {
+   
+      // Internet Explorer Browsers
+      try {
+         ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+      
+         try {
+            ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+         } catch (e) {
+      
+            // Something went wrong
+            alert("Your browser broke!");
+            return false;
+         }
+      }
+   }
+}
+</pre>
+<h2>XMLHttpRequest对象已配置</h2>
+<p>在这一步中，我们将编写一个将由客户端事件触发的函数，并将注册一个回调函数processRequest（）。</p>
+<pre class="prettyprint notranslate">
+function validateUserId() {
+   ajaxFunction();
+   
+   // Here processRequest() is the callback function.
+   ajaxRequest.onreadystatechange = processRequest;
+   
+   if (!target) target = document.getElementById("userid");
+   var url = "validate?id=" + escape(target.value);
+   
+   ajaxRequest.open("GET", url, true);
+   ajaxRequest.send(null);
+}
+</pre>
+<h2>对Web服务器进行异步请求</h2>
+<p>源代码可在上面的代码中找到。以粗体字体编写的代码负责向Web服务器发出请求。这都是使用XMLHttpRequest对象ajaxRequest完成的。</p>
+<pre class="prettyprint notranslate">
+function validateUserId() {
+   ajaxFunction();
+   
+   // Here processRequest() is the callback function.
+   ajaxRequest.onreadystatechange = processRequest;
+   
+   <b>if (!target) target = document.getElementById("userid");
+   var url = "validate?id = " + escape(target.value);
+   
+   ajaxRequest.open("GET", url, true);
+   ajaxRequest.send(null);</b>
+}
+</pre>
+<p>假设您在用户ID框中输入Zara，然后在上述请求中，URL设置为“validate？id = Zara”。</p>
+<h2>Webserver返回包含XML文档的结果</h2>
+<p>您可以使用任何语言实现服务器端脚本，但其逻辑应如下所示。</p>
+<ul class="list">
+<li>从客户端获取请求。</li>
+<li>解析客户端的输入。</li>
+<li>需要处理。</li>
+<li>将输出发送到客户端。</li>
+</ul>
+<p>如果我们假设你要编写一个servlet，那么这是一段代码。</p>
+<pre class="prettyprint notranslate">
+public void doGet(HttpServletRequest request,
+   HttpServletResponse response) throws IOException, ServletException {
+   String targetId = request.getParameter("id");
+   
+   if ((targetId != null) &amp;&amp; !accounts.containsKey(targetId.trim())) {
+      response.setContentType("text/xml");
+      response.setHeader("Cache-Control", "no-cache");
+      response.getWriter().write("&lt;valid&gt;true&lt;/valid&gt;");
+   } else {
+      response.setContentType("text/xml");
+      response.setHeader("Cache-Control", "no-cache");
+      response.getWriter().write("&lt;valid&gt;false&lt;/valid&gt;");
+   }
+}
+</pre>
+<h2>回调函数调用processRequest（）</h2>
+<p>XMLHttpRequest对象配置为在XMLHttpRequest对象的readyState状态更改时调用processRequest（）函数。现在，此函数将从服务器接收结果，并将执行所需的处理。如下例所示，它根据Webserver返回的值设置变量消息为true或false。</p>
+<pre class="prettyprint notranslate"> 
+function processRequest() {
+   if (req.readyState == 4) {
+      if (req.status == 200) {
+         var message = ...;
+...
+}
+</pre>
+<h2>HTML DOM已更新</h2>
+<p>这是最后一步，在此步骤中，您的HTML页面将会更新。它以下列方式发生 - </p>
+<ul class="list">
+<li>JavaScript使用DOM API获取对页面中任何元素的引用。</li>
+<li>获取元素引用的推荐方法是调用。</li>
+</ul>
+<pre class="prettyprint notranslate">
+document.getElementById("userIdMessage"), 
+// where "userIdMessage" is the ID attribute 
+// of an element appearing in the HTML document
+</pre>
+<ul class="list">
+<li><p>现在可以使用JavaScript来修改元素的属性;修改元素的样式属性;或添加，删除或修改子元素。这是一个例子 - </p></li>
+</ul>
+<pre class="prettyprint notranslate">
+&lt;script type = "text/javascript"&gt;
+   &lt;!--
+   function setMessageUsingDOM(message) {
+      var userMessageElement = document.getElementById("userIdMessage");
+      var messageText;
+      
+      if (message == "false") {
+         userMessageElement.style.color = "red";
+         messageText = "Invalid User Id";
+      } else {
+         userMessageElement.style.color = "green";
+         messageText = "Valid User Id";
+      }
+      
+      var messageBody = document.createTextNode(messageText);
+      
+      // if the messageBody element has been created simple 
+      // replace it otherwise append the new element
+      if (userMessageElement.childNodes[0]) {
+         userMessageElement.replaceChild(messageBody, userMessageElement.childNodes[0]);
+      } else {
+         userMessageElement.appendChild(messageBody);
+      }
+   }
+   --&gt;
+&lt;/script&gt;
+
+&lt;body&gt;
+   &lt;div id = "userIdMessage"&gt;&lt;div&gt;
+&lt;/body&gt;
+</pre>
+<p>如果你已经理解了上面提到的七个步骤，那么你几乎已经完成了AJAX。在下一章中，我们将更详细地看到XMLHttpRequest对象。</p>
+<h1>AJAX  -  XMLHttpRequest</h1>
+<p>XMLHttpRequest对象是AJAX的关键。自从Internet Explorer 5.5于2000年7月发布以来，它已经可用，但直到2005年的AJAX和Web 2.0开始流行才被完全发现。</p>
+<p>XMLHttpRequest（XHR）是一种API，可供JavaScript，JScript，VBScript和其他Web浏览器脚本语言用于使用HTTP在Web服务器之间传输和操作XML数据，在网页的客户端和网络之间建立独立的连接通道。服务器端。</p>
+<p>从XMLHttpRequest调用返回的数据通常由后端数据库提供。除了XML之外，XMLHttpRequest还可用于获取其他格式的数据，例如JSON甚至是纯文本。</p>
+<p>您已经看过几个关于如何创建XMLHttpRequest对象的示例。</p>
+<p>下面列出了一些您必须熟悉的方法和属性。</p>
+<h2>XMLHttpRequest方法</h2>
+<ul class="list">
+<li><p>中止（）</p>
+<p>取消当前请求。</p></li>
+<li><p>getAllResponseHeaders（）</p>
+<p>以字符串形式返回完整的HTTP标头集。</p></li>
+<li><p>getResponseHeader（headerName）</p>
+<p>返回指定HTTP标头的值。</p></li>
+<li><p>打开（方法，URL）</p></li>
+<li><p>打开（方法，URL，异步）</p></li>
+<li><p>open（方法，URL，异步，userName）</p></li>
+<li><p>打开（方法，URL，异步，用户名，密码）</p>
+<p>指定请求的方法，URL和其他可选属性。</p>
+<p>方法参数可以具有值“GET”，“POST”或“HEAD”。其他HTTP方法（如“PUT”和“DELETE”（主要用于REST应用程序））也是可能的。</p>
+<p>“async”参数指定是否应异步处理请求。 “true”表示脚本处理在send（）方法之后继续而不等待响应，“false”表示脚本在继续脚本处理之前等待响应。</p>
+</li>
+<li><p>发送（内容）</p>
+<p>发送请求。</p></li>
+<li><p>setRequestHeader（label，value）</p>
+<p>将标签/值对添加到要发送的HTTP标头。</p></li>
+</ul>
+<h2>XMLHttpRequest属性</h2>
+<ul class="list">
+<li><p>的onreadystatechange</p>
+<p>每个状态更改时触发的事件的事件处理程序。</p></li>
+<li><p>readyState的</p>
+<p>readyState属性定义XMLHttpRequest对象的当前状态。</p>
+<p>下表提供了readyState属性的可能值列表 - </p>
+</li>
+</ul>
+<table class="table table-bordered" style="text-align:center;">
+<tr>
+<th style="text-align:center;" width="10%">州</th>
+<th style="text-align:center;">描述</th>
+</tr>
+<tr>
+<td>0</td>
+<td>请求未初始化。</td>
+</tr>
+<tr>
+<td>1</td>
+<td>请求已设置。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>请求已发送。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>请求正在进行中。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>请求已完成。</td>
+</tr>
+</table>
+<p>readyState = 0创建XMLHttpRequest对象之后，但在调用open（）方法之前。</p>
+<p>readyState = 1调用open（）方法之后，但在调用send（）之前。</p>
+<p>readyState = 2调用send（）之后。</p>
+<p>readyState = 3浏览器与服务器建立通信后，但在服务器完成响应之前。</p>
+<p>readyState = 4请求完成后，响应数据已完全从服务器接收。</p>
+<ul class="list">
+<li><p>responseText的</p>
+<p>以字符串形式返回响应。</p></li>
+<li><p>responseXML的</p>
+<p>以XML格式返回响应。此属性返回XML文档对象，可以使用W3C DOM节点树方法和属性检查和解析该对象。</p></li>
+<li><p>状态</p>
+<p>将状态返回为数字（例如，“Not Found”为404，“OK”为200）。</p></li>
+<li><p>状态文本</p>
+<p>以字符串形式返回状态（例如，“未找到”或“确定”）。</p></li>
+</ul>
+<h1>AJAX  - 数据库操作</h1>
+<p>为了清楚地说明使用AJAX从数据库访问信息是多么容易，我们将动态构建MySQL查询并在“ajax.html”上显示结果。但在我们继续之前，让我们做好基础工作。使用以下命令创建表。</p>
+<p>注 - 我们假设您有足够的权限执行以下MySQL操作。</p>
+<pre class="result notranslate">
+CREATE TABLE 'ajax_example' (
+   'name' varchar(50) NOT NULL,
+   'age' int(11) NOT NULL,
+   'sex' varchar(1) NOT NULL,
+   'wpm' int(11) NOT NULL,
+   PRIMARY KEY  ('name')
+) 
+</pre>
+<p>现在使用以下SQL语句将以下数据转储到此表中 - </p>
+<pre class="result notranslate">
+INSERT INTO 'ajax_example' VALUES ('Jerry', 120, 'm', 20);
+INSERT INTO 'ajax_example' VALUES ('Regis', 75, 'm', 44);
+INSERT INTO 'ajax_example' VALUES ('Frank', 45, 'm', 87);
+INSERT INTO 'ajax_example' VALUES ('Jill', 22, 'f', 72);
+INSERT INTO 'ajax_example' VALUES ('Tracy', 27, 'f', 0);
+INSERT INTO 'ajax_example' VALUES ('Julie', 35, 'f', 90);
+</pre>
+<h2>客户端HTML文件</h2>
+<p>现在让我们拥有客户端HTML文件，即ajax.html，它将具有以下代码 - </p>
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;body&gt;
+      &lt;script language = "javascript" type = "text/javascript"&gt;
+         &lt;!-- 
+         //Browser Support Code
+         function ajaxFunction() {
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            
+            try {        
+               // Opera 8.0+, Firefox, Safari
+               ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+               
+               // Internet Explorer Browsers
+               try {
+                  ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+               } catch (e) {
+                  
+                  try {
+                     ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                  } catch (e) {
+                     // Something went wrong
+                     alert("Your browser broke!");
+                     return false;
+                  }
+               }
+            }
+            
+            // Create a function that will receive data
+            // sent from the server and will update
+            // div section in the same page.
+            ajaxRequest.onreadystatechange = function() {
+            
+               if(ajaxRequest.readyState == 4) {
+                  var ajaxDisplay = document.getElementById('ajaxDiv');
+                  ajaxDisplay.innerHTML = ajaxRequest.responseText;
+               }
+            }
+            
+            // Now get the value from user and pass it to
+            // server script.
+            var age = document.getElementById('age').value;
+            var wpm = document.getElementById('wpm').value;
+            var sex = document.getElementById('sex').value;
+            var queryString = "?age = " + age ;
+            
+            queryString +=  "&amp;wpm = " + wpm + "&amp;sex = " + sex;
+            ajaxRequest.open("GET", "ajax-example.php" + queryString, true);
+            ajaxRequest.send(null); 
+         }
+         //--&gt;
+      &lt;/script&gt;
+
+      &lt;form name = 'myForm'&gt;
+         Max Age: &lt;input type = 'text' id = 'age' /&gt; &lt;br /&gt;
+         Max WPM: &lt;input type = 'text' id = 'wpm' /&gt; &lt;br /&gt;
+         Sex: 
+         
+         &lt;select id = 'sex'&gt;
+            &lt;option value = "m"&gt;m&lt;/option&gt;
+            &lt;option value = "f"&gt;f&lt;/option&gt;
+         &lt;/select&gt;
+         
+         &lt;input type = 'button' onclick = 'ajaxFunction()' value = 'Query MySQL'/&gt;
+      &lt;/form&gt;
+      
+      &lt;div id = 'ajaxDiv'&gt;Your result will display here&lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>注 - 在Query中传递变量的方式是根据HTTP标准并具有formA。</p>
+<pre class="prettyprint notranslate">
+URL?variable1 = value1;&amp;variable2 = value2;
+</pre>
+<p>上面的代码将为您提供如下界面 - </p>
+<script language="javascript" type="text/javascript">
+<!-- 
+//Browser Support Code
+function ajaxFunction(){
+   var ajaxRequest;  // The variable that makes Ajax possible!
+   try{
+   
+      // Opera 8.0+, Firefox, Safari
+      ajaxRequest = new XMLHttpRequest();
+   }catch (e){
+   
+      // Internet Explorer Browsers
+      try{
+         ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      }catch (e) {
+         try{
+            ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+         }catch (e){
+      
+            // Something went wrong
+            alert("Your browser broke!");
+            return false;
+        }
+     }
+  }
+
+   // Create a function that will receive data 
+   // sent from the server and will update
+   // div section in the same page.
+   ajaxRequest.onreadystatechange = function(){
+   
+      if(ajaxRequest.readyState == 4){
+         var ajaxDisplay = document.getElementById('ajaxDiv');
+         ajaxDisplay.innerHTML = ajaxRequest.responseText;
+      }
+   }
+   // Now get the value from user and pass it to
+   // server script.
+   var age = document.getElementById('age').value;
+   var wpm = document.getElementById('wpm').value;
+   var sex = document.getElementById('sex').value;
+   var queryString = "?age=" + age ;
+
+   queryString +=  "&wpm=" + wpm + "&sex=" + sex;
+   ajaxRequest.open("GET", "/ajax/ajax-example.php" + queryString, true);
+   ajaxRequest.send(null); 
+}
+//-->
+</script>
+<form name="myForm0">
+<p>Max Age:? <input id="age0" type="text"/></p>
+<p>Max WPM: <input id="wpm0" type="text"/></p>
+<p>Sex: <select id="sex0">
+<option value="m">m</option>
+<option value="f">f</option>
+</select></p>
+<input onclick="" type="button" value="Query MySQL"/>
+</form>
+<p>在您输入后，您的结果将显示在此部分中。</p>
+<p>注 - 这是一个虚拟界面。</p>
+<h2>服务器端PHP文件</h2>
+<p>您的客户端脚本已准备就绪。现在，我们必须编写我们的服务器端脚本，它将从数据库中获取年龄，wpm和性别，并将其发送回客户端。将以下代码放入文件“ajax-example.php”。</p>
+<pre class="prettyprint notranslate">
+&lt;?php
+$dbhost = "localhost";
+$dbuser = "dbusername";
+$dbpass = "dbpassword";
+$dbname = "dbname";
+	
+//Connect to MySQL Server
+mysql_connect($dbhost, $dbuser, $dbpass);
+	
+//Select Database
+mysql_select_db($dbname) or die(mysql_error());
+	
+// Retrieve data from Query String
+$age = $_GET['age'];
+$sex = $_GET['sex'];
+$wpm = $_GET['wpm'];
+	
+// Escape User Input to help prevent SQL Injection
+$age = mysql_real_escape_string($age);
+$sex = mysql_real_escape_string($sex);
+$wpm = mysql_real_escape_string($wpm);
+	
+//build query
+$query = "SELECT * FROM ajax_example WHERE sex = '$sex'";
+
+if(is_numeric($age))
+   $query .= " AND age &lt;= $age";
+
+if(is_numeric($wpm))
+   $query .= " AND wpm &lt;= $wpm";
+	
+//Execute query
+$qry_result = mysql_query($query) or die(mysql_error());
+
+//Build Result String
+$display_string = "&lt;table&gt;";
+$display_string .= "&lt;tr&gt;";
+$display_string .= "&lt;th&gt;Name&lt;/th&gt;";
+$display_string .= "&lt;th&gt;Age&lt;/th&gt;";
+$display_string .= "&lt;th&gt;Sex&lt;/th&gt;";
+$display_string .= "&lt;th&gt;WPM&lt;/th&gt;";
+$display_string .= "&lt;/tr&gt;";
+
+// Insert a new row in the table for each person returned
+while($row = mysql_fetch_array($qry_result)) {
+   $display_string .= "&lt;tr&gt;";
+   $display_string .= "&lt;td&gt;$row[name]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[age]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[sex]&lt;/td&gt;";
+   $display_string .= "&lt;td&gt;$row[wpm]&lt;/td&gt;";
+   $display_string .= "&lt;/tr&gt;";
+}
+
+echo "Query: " . $query . "&lt;br /&gt;";
+$display_string .= "&lt;/table&gt;";
+
+echo $display_string;
+?&gt;
+</pre>
+<p>现在尝试在Max Age或任何其他框中输入有效值（例如120），然后单击Query MySQL按钮。</p>
+<form name="myForm">
+<p>Max Age:? <input id="age" type="text"/></p>
+<p>Max WPM: <input id="wpm" type="text"/></p>
+<p>Sex: <select id="sex">
+<option value="m">m</option>
+<option value="f">f</option>
+</select></p>
+<input onclick="ajaxFunction()" type="button" value="Query MySQL"/>
+</form>
+<p>在您输入后，您的结果将显示在此部分中。</p>
+<p>如果您已成功完成本课程，那么您就知道如何使用MySQL，PHP，HTML和Javascript来编写AJAX应用程序。</p>
+<h1>AJAX  - 安全性</h1>
+<h2>AJAX安全性：服务器端</h2>
+<ul class="list">
+<li><p>基于AJAX的Web应用程序使用与常规Web应用程序相同的服务器端安全方案。</p></li>
+<li><p>您可以在web.xml文件（声明性）或程序（程序）中指定身份验证，授权和数据保护要求。</p></li>
+<li><p>基于AJAX的Web应用程序受到与常规Web应用程序相同的安全威胁。</p></li>
+</ul>
+<h2>AJAX安全：客户端</h2>
+<ul class="list">
+<li><p>JavaScript代码对用户/黑客可见。黑客可以使用JavaScript代码来推断服务器端的弱点。</p></li>
+<li><p>JavaScript代码从服务器下载并在客户端执行（“eval”），并可能通过恶意代码破坏客户端。</p></li>
+<li><p>下载的JavaScript代码受到沙盒安全模型的约束，可以放宽签名的JavaScript。</p></li>
+</ul>
+<h1>AJAX  - 当前问题</h1>
+<p>AJAX正在快速增长，这就是它包含许多问题的原因。我们希望随着时间的推移，它们将得到解决，AJAX将成为Web应用程序的理想选择。我们列出了AJAX目前遇到的一些问题。</p>
+<p>复杂性增加了</p>
+<ul class="list">
+<li><p>服务器端开发人员需要了解HTML客户端页面以及服务器端逻辑中将需要表示逻辑。</p></li>
+<li><p>页面开发人员必须具备JavaScript技术技能。</p></li>
+</ul>
+<p>基于AJAX的应用程序可能难以调试，测试和维护</p>
+<ul class="list">
+<li>JavaScript很难测试 - 自动测试很难。</li>
+<li>JavaScript中的模块化程度较弱。</li>
+<li>尚缺乏设计模式或最佳实践指南。</li>
+</ul>
+<p>工具包/框架尚未成熟</p>
+<ul class="list">
+<li>他们中的大多数都处于测试阶段。</li>
+</ul>
+<p>尚未标准化XMLHttpRequest</p>
+<ul class="list">
+<li>IE的未来版本将解决这个问题。</li>
+</ul>
+<p>旧浏览器中不支持XMLHttpRequest</p>
+<ul class="list">
+<li>iframe会有所帮助。</li>
+</ul>
+<p>JavaScript技术依赖性和不兼容性</p>
+<ul class="list">
+<li>必须启用应用程序才能运行。</li>
+<li>仍然存在一些浏览器不兼容性。</li>
+</ul>
+<p>JavaScript代码对黑客可见</p>
+<ul class="list">
+<li>设计糟糕的JavaScript代码可能会引发安全问题。</li>
+</ul>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_issues.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_useful_resources.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

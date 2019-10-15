@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 当前问题</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_security.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_quick_guide.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<p>AJAX正在快速增长，这就是它包含许多问题的原因。我们希望随着时间的推移，它们将得到解决，AJAX将成为Web应用程序的理想选择。我们列出了AJAX目前遇到的一些问题。</p>
+<p>复杂性增加了</p>
+<ul class="list">
+<li><p>服务器端开发人员需要了解HTML客户端页面以及服务器端逻辑中将需要表示逻辑。</p></li>
+<li><p>页面开发人员必须具备JavaScript技术技能。</p></li>
+</ul>
+<p>基于AJAX的应用程序可能难以调试，测试和维护</p>
+<ul class="list">
+<li>JavaScript很难测试 - 自动测试很难。</li>
+<li>JavaScript中的模块化程度较弱。</li>
+<li>尚缺乏设计模式或最佳实践指南。</li>
+</ul>
+<p>工具包/框架尚未成熟</p>
+<ul class="list">
+<li>他们中的大多数都处于测试阶段。</li>
+</ul>
+<p>尚未标准化XMLHttpRequest</p>
+<ul class="list">
+<li>IE的未来版本将解决这个问题。</li>
+</ul>
+<p>旧浏览器中不支持XMLHttpRequest</p>
+<ul class="list">
+<li>iframe会有所帮助。</li>
+</ul>
+<p>JavaScript技术依赖性和不兼容性</p>
+<ul class="list">
+<li>必须启用应用程序才能运行。</li>
+<li>仍然存在一些浏览器不兼容性。</li>
+</ul>
+<p>JavaScript代码对黑客可见</p>
+<ul class="list">
+<li>设计糟糕的JavaScript代码可能会引发安全问题。</li>
+</ul>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_security.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/ajax_quick_guide.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>

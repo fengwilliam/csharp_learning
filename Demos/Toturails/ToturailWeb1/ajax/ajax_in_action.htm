@@ -1,0 +1,187 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">    <title></title>    <link href="../Content/style-min.css" rel="stylesheet" /></head><body>    <div class="wrapLoader">        <div class="imgLoader">            <img src="/images/loading-cg.gif" alt="" width="70" height="70">        </div>    </div>    <div id="right_obs" class="display-none" onclick="close_obs_sidenav()"></div>    <header>        <div class="container">            <h1 class="logo">                <a href="index.htm" title="哈喽教程">                    哈喽教程                </a>            </h1>            <ul class="tp-inline-block pull-right" id="tp-head-icons">                <li>                    <div class="tp-second-nav tp-display-none tp-pointer" onclick="openNav()">                        <i class="fa fa-th-large fa-lg"></i>                    </div>                </li>            </ul>            <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 290px!important"> <i class="icon icon-bars"></i> </button>        </div>        <div class="sidenav" id="mySidenav">            <div class="navbar nav-main">                <div class="container">                    <nav class="nav-main mega-menu">                        <ul class="nav nav-pills nav-main" id="mainMenu">                            <li class="dropdown no-sub-menu">                                <!--<div class="searchform-popup">                                    <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off" style="">                                    <div class="magnifying-glass"><i class="icon-search"></i> Search </div>                                </div>-->                            </li>                        </ul>                    </nav>                </div>            </div>        </div>    </header>    <div style="clear:both;"></div>    <div role="main" class="main">        <div class="container">            <div class="row">                <div class="col-md-2">                    <aside class="sidebar"><ul class="nav nav-list primary left-menu"><li class="heading">AJAX教程</li><li><a target="_top" href="/ajax/index.htm">AJAX  - 主页</a></li><li><a target="_top" href="/ajax/what_is_ajax.htm">AJAX  - 什么是AJAX？</a></li><li><a target="_top" href="/ajax/ajax_technology.htm">AJAX  - 技术</a></li><li><a target="_top" href="/ajax/ajax_examples.htm">AJAX  - 示例</a></li><li><a target="_top" href="/ajax/ajax_browser_support.htm">AJAX  - 浏览器支持</a></li><li><a target="_top" href="/ajax/ajax_in_action.htm" style="background-color: rgb(214, 214, 214);">AJAX  - 行为</a></li><li><a target="_top" href="/ajax/what_is_xmlhttprequest.htm">AJAX  -  XMLHttpRequest</a></li><li><a target="_top" href="/ajax/ajax_database.htm">AJAX  - 数据库操作</a></li><li><a target="_top" href="/ajax/ajax_security.htm">AJAX  - 安全性</a></li><li><a target="_top" href="/ajax/ajax_issues.htm">AJAX  - 问题</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">AJAX有用的资源</li><li><a target="_top" href="/ajax/ajax_quick_guide.htm">AJAX  - 快速指南</a></li><li><a target="_top" href="/ajax/ajax_useful_resources.htm">AJAX  - 有用的资源</a></li><li><a target="_top" href="/ajax/ajax_discussion.htm">AJAX  - 讨论</a></li></ul><ul class="nav nav-list primary left-menu"><li class="heading">精选阅读</li><li><a target="_top" href="/developers_best_practices/index.htm">开发人员的最佳实践</a></li><li><a target="_top" href="/questions_and_answers.htm">问题和解答</a></li><li><a target="_top" href="/effective_resume_writing.htm">有效的简历写作</a></li><li><a target="_top" href="/hr_interview_questions/index.htm">人力资源面试问题</a></li><li><a target="_top" href="/computer_glossary.htm">电脑词汇表</a></li><li><a target="_top" href="/computer_whoiswho.htm">谁是谁</a></li></ul></aside>                </div>                <div class="row">                    <div class="content"><div class="col-md-7 middle-col">
+<h1>AJAX  - 行为</h1>
+<hr/>
+
+
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_browser_support.htm">上一页</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/what_is_xmlhttprequest.htm">下一页</a>
+</div>
+<div class="clearer"></div>
+<hr/>
+<p>本章为您提供了AJAX操作的确切步骤的清晰图像。</p>
+<h2>AJAX操作的步骤</h2>
+<ul class="list">
+<li>发生客户端事件。</li>
+<li>创建XMLHttpRequest对象。</li>
+<li>配置XMLHttpRequest对象。</li>
+<li>XMLHttpRequest对象向Web服务器发出异步请求。</li>
+<li>Web服务器返回包含XML文档的结果。</li>
+<li>XMLHttpRequest对象调用callback（）函数并处理结果。</li>
+<li>更新HTML DOM。</li>
+</ul>
+<p>让我们一步一步的说明这些步骤。</p>
+<h2>发生客户端事件</h2>
+<ul class="list">
+<li><p>JavaScript函数作为事件的结果被调用。</p></li>
+<li><p>示例 -  页面上有一个输入框，其id设置为“userid”，validateUserId()作为该输入框的onkeyup对应的JavaScript函数</p></li>
+<li><p>&lt;input type =“text”size =“20”id =“userid”name =“id”onkeyup =“validateUserId（）;”&gt;。</p></li>
+</ul>
+<h2>创建XMLHttpRequest对象</h2>
+<pre class="prettyprint notranslate">
+var ajaxRequest;  // The variable that makes Ajax possible!
+function ajaxFunction() {
+   try {
+      // Opera 8.0+, Firefox, Safari
+      ajaxRequest = new XMLHttpRequest();
+   } catch (e) {
+   
+      // Internet Explorer Browsers
+      try {
+         ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+      
+         try {
+            ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+         } catch (e) {
+      
+            // Something went wrong
+            alert("Your browser broke!");
+            return false;
+         }
+      }
+   }
+}
+</pre>
+<h2>配置XMLHttpRequest对象</h2>
+<p>在这一步中，我们将编写一个将由客户端事件触发的函数，并将注册一个回调函数processRequest（）。</p>
+<pre class="prettyprint notranslate">
+function validateUserId() {
+   ajaxFunction();
+   
+   // Here processRequest() is the callback function.
+   ajaxRequest.onreadystatechange = processRequest;
+   
+   if (!target) target = document.getElementById("userid");
+   var url = "validate?id=" + escape(target.value);
+   
+   ajaxRequest.open("GET", url, true);
+   ajaxRequest.send(null);
+}
+</pre>
+<h2>对Web服务器进行异步请求</h2>
+<p>源代码可在上面的代码中找到。以粗体字体编写的代码负责向Web服务器发出请求。这都是使用XMLHttpRequest对象ajaxRequest完成的。</p>
+<pre class="prettyprint notranslate">
+function validateUserId() {
+   ajaxFunction();
+   
+   // Here processRequest() is the callback function.
+   ajaxRequest.onreadystatechange = processRequest;
+   
+   <b>if (!target) target = document.getElementById("userid");
+   var url = "validate?id = " + escape(target.value);
+   
+   ajaxRequest.open("GET", url, true);
+   ajaxRequest.send(null);</b>
+}
+</pre>
+<p>假设您在userid输入框中输入Zara，在上述请求中，URL就会被设置为“validate？id = Zara”。</p>
+<h2>Webserver返回包含XML文档的结果</h2>
+<p>您可以使用任何语言实现服务器端脚本，但其逻辑应如下所示。</p>
+<ul class="list">
+<li>从客户端获取请求。</li>
+<li>解析客户端的输入。</li>
+<li>处理请求。</li>
+<li>将输出发送到客户端。</li>
+</ul>
+<p>如果我们假设你要编写一个servlet程序，那么代码如下。</p>
+<pre class="prettyprint notranslate">
+public void doGet(HttpServletRequest request,
+   HttpServletResponse response) throws IOException, ServletException {
+   String targetId = request.getParameter("id");
+   
+   if ((targetId != null) &amp;&amp; !accounts.containsKey(targetId.trim())) {
+      response.setContentType("text/xml");
+      response.setHeader("Cache-Control", "no-cache");
+      response.getWriter().write("&lt;valid&gt;true&lt;/valid&gt;");
+   } else {
+      response.setContentType("text/xml");
+      response.setHeader("Cache-Control", "no-cache");
+      response.getWriter().write("&lt;valid&gt;false&lt;/valid&gt;");
+   }
+}
+</pre>
+<h2>回调函数调用processRequest（）</h2>
+<p>XMLHttpRequest对象配置为在XMLHttpRequest对象的readyState状态更改时调用processRequest（）函数。现在，此函数将从服务器接收结果，并将执行所需的处理。如下例所示，它根据请求的状态和Webserver返回的值来设置变量message的值。</p>
+<pre class="prettyprint notranslate"> 
+function processRequest() {
+   if (req.readyState == 4) {
+      if (req.status == 200) {
+         var message = ...;
+...
+}
+</pre>
+<h2>更新HTML DOM</h2>
+<p>这是最后一步，在此步骤中，您的HTML页面将会更新。更新步骤为 - </p>
+<ul class="list">
+<li>JavaScript使用DOM API获取对页面中任何元素的引用。</li>
+<li>获取元素引用的方法如下。</li>
+</ul>
+<pre class="prettyprint notranslate">
+document.getElementById("userIdMessage"), 
+// where "userIdMessage" is the ID attribute 
+// of an element appearing in the HTML document
+</pre>
+<ul class="list">
+<li><p>现在可以使用JavaScript来修改元素的属性;修改元素的样式属性;或添加，删除或修改子元素。代码如下 - </p></li>
+</ul>
+<pre class="prettyprint notranslate">
+&lt;script type = "text/javascript"&gt;
+   &lt;!--
+   function setMessageUsingDOM(message) {
+      var userMessageElement = document.getElementById("userIdMessage");
+      var messageText;
+      
+      if (message == "false") {
+         userMessageElement.style.color = "red";
+         messageText = "Invalid User Id";
+      } else {
+         userMessageElement.style.color = "green";
+         messageText = "Valid User Id";
+      }
+      
+      var messageBody = document.createTextNode(messageText);
+      
+      // if the messageBody element has been created simple 
+      // replace it otherwise append the new element
+      if (userMessageElement.childNodes[0]) {
+         userMessageElement.replaceChild(messageBody, userMessageElement.childNodes[0]);
+      } else {
+         userMessageElement.appendChild(messageBody);
+      }
+   }
+   --&gt;
+&lt;/script&gt;
+
+&lt;body&gt;
+   &lt;div id = "userIdMessage"&gt;&lt;div&gt;
+&lt;/body&gt;
+</pre>
+<p>如果你已经理解了上面提到的七个步骤，那么你几乎已经完成了AJAX。在下一章中，我们将更详细地了解XMLHttpRequest对象。</p>
+<hr/>
+<div class="pre-btn">
+<a href="/ajax/ajax_browser_support.htm">上一页</a>
+</div>
+<div class="print-btn center">
+<a href="/cgi-bin/printpage.cgi" target="_blank">打印</a>
+</div>
+<div class="nxt-btn">
+<a href="/ajax/what_is_xmlhttprequest.htm">下一页</a>
+</div>
+<hr/>
+<!-- PRINTING ENDS HERE -->
+
+</div></div>                    <div class="row">                        <div class="col-md-2" id="rightbar">                            <div class="simple-ad">                                主目录                            </div>                            <div class="rightgooglead">                            广告                            </div>                        </div>                    </div>                </div>            </div>        </div>        <div class="footer-copyright">            <div class="container">                <div class="row">                </div>            </div>        </div>    </div>    <div id="privacy-banner" style="display: none;">        <div>            <p>                We use cookies to provide and improve our services. By using our site, you consent to our Cookies Policy.                <a id="banner-accept" href="javascript:void(0)">Accept</a>                <a id="banner-learn" href="/about/about_cookies.htm" target="_blank">Learn more</a>            </p>        </div>    </div></body></html>
