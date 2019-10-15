@@ -1,0 +1,9 @@
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\bin\Debug\MathDraw.exe.config
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\bin\Debug\MathDraw.exe
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\bin\Debug\MathDraw.pdb
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.csprojResolveAssemblyReference.cache
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.Form1.resources
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.Properties.Resources.resources
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.csproj.GenerateResource.Cache
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.exe
+c:\users\liuxf\documents\visual studio 2013\Projects\MathDraw\MathDraw\obj\Debug\MathDraw.pdb
